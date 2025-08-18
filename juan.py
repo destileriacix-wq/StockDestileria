@@ -79,5 +79,5 @@ def selectColumns(data):
         st.write(error)
 
 
-selectColumns("stock prueba 1.xlsx")
+selectColumns("stock prueba 2.xlsx")
     
