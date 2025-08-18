@@ -50,7 +50,7 @@ def selectColumns(data):
             
             for x in df.columns:  #RECORRIENDO LOS NOMBRES DE LAS COLUMNAS DEL DF
                 
-                check = st.checkbox(x, value = True, key = str(x))
+                check = st.checkbox(x, value = True, key = x)
                 
                 if check == False:
                         
