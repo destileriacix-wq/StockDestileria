@@ -35,12 +35,14 @@ def clear(data):
         # df.columns= df.iloc[0]
         
         # df = df.drop(0)
-
+        
+        return df 
+        
     except Exception as error: 
 
         st.warning(f"Error: {error}")
 
-    return df 
+    
 
 
 def selectColumns(data):
