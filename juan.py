@@ -38,6 +38,8 @@ def selectColumns(data):
         df.columns= df.iloc[0]
         
         df = df.drop(0)
+
+        df = df.fillna("-")
         
         tabColumns, tabData=st.tabs(["Seleccion de Columnas", "Data"])    
             
