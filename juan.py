@@ -13,11 +13,9 @@ with st.container():
             date= datetime.now().strftime("%d/%m/%Y")
             st.title(f"STOCK {date}")
 
-
-def selectColumns(data):
-    
+def clear(data):
     try:
-       
+        
         df=pd.read_excel(data)
     
         df = df.dropna(axis=1, how="all")
@@ -28,8 +26,6 @@ def selectColumns(data):
 
         df = df [df.columns[df.isnull().sum() < porcentaje]]
 
-        #NULOS POR COLUMNAS-----------!!!!!!!!!!!!!!!
-
         lenn = len(df.columns) * 0.80
 
         df = df[df.isnull().sum(axis=1) < lenn]
@@ -39,6 +35,17 @@ def selectColumns(data):
         # df.columns= df.iloc[0]
         
         # df = df.drop(0)
+
+    except Exception as error: 
+
+        st.warning(f"Error: {error}")
+
+    return df 
+
+
+def selectColumns(data):
+    
+    try:
         
         tabColumns, tabData=st.tabs(["Seleccion de Columnas", "Data"])    
             
@@ -79,5 +86,5 @@ def selectColumns(data):
         st.write(error)
 
 
-selectColumns("stock prueba 2.xlsx")
-    
+limpieza = clear ("stock prueba 2.xlsx")
+selectColumns(limpieza)
