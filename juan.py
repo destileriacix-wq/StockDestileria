@@ -36,9 +36,9 @@ def selectColumns(data):
 
         df = df.reset_index(drop = True)
         
-        df.columns= df.iloc[0]
+        # df.columns= df.iloc[0]
         
-        df = df.drop(0)
+        # df = df.drop(0)
         
         tabColumns, tabData=st.tabs(["Seleccion de Columnas", "Data"])    
             
