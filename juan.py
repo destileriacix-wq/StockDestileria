@@ -80,4 +80,4 @@ def selectColumns(data):
         st.write(error)
 
 
-selectColumns("stock 7.xlsx")
+selectColumns("stock 8.xlsx")
